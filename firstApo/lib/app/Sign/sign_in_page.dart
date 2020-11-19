@@ -1,3 +1,4 @@
+import 'package:firstApo/common_widgets/custom_raised_button.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class SignInPage extends StatelessWidget {
 
   Widget _buildContainer() {
     return Container(
-      color: Colors.white24,
+      color: Colors.grey[200],
       padding: EdgeInsets.all(15.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -30,53 +31,41 @@ class SignInPage extends StatelessWidget {
           SizedBox(
             height: 50.0,
           ),
-          SizedBox(
-            height: 50.0,
-            child: RaisedButton(
-              child: Text(
-                'Sign In with Google',
-                style: TextStyle(color: Colors.black87, fontSize: 15.0),
-              ),
-              onPressed: () {
-                print('Button Pressed');
-              },
-              color: Colors.blue[100],
-              textColor: Colors.black54,
+          CustomRaisedButton(
+            child: Text(
+              'Sign in with Google',
+              style: TextStyle(color: Colors.black87, fontSize: 15.0),
             ),
+            color: Colors.white,
+            onPressed: () {
+              print('Button clicked');
+            },
           ),
           SizedBox(
             height: 10.0,
           ),
-          SizedBox(
-            height: 50.0,
-            child: RaisedButton(
-              child: Text(
-                'Sign In with Faceboook',
-                style: TextStyle(color: Colors.black87, fontSize: 15.0),
-              ),
-              onPressed: () {
-                print('Button Pressed');
-              },
-              color: Colors.green[100],
-              textColor: Colors.black54,
+          CustomRaisedButton(
+            child: Text(
+              'Sign in with Facebook',
+              style: TextStyle(color: Colors.black87, fontSize: 15.0),
             ),
+            color: Colors.blue[100],
+            onPressed: () {
+              print('Button clicked');
+            },
           ),
           SizedBox(
             height: 10.0,
           ),
-          SizedBox(
-            height: 50.0,
-            child: RaisedButton(
-              child: Text(
-                'Sign In with Email',
-                style: TextStyle(color: Colors.black87, fontSize: 15.0),
-              ),
-              onPressed: () {
-                print('Button Pressed');
-              },
-              color: Colors.blueGrey[100],
-              textColor: Colors.black54,
+          CustomRaisedButton(
+            child: Text(
+              'Sign in with Email',
+              style: TextStyle(color: Colors.black54, fontSize: 15.0),
             ),
+            color: Colors.orange[200],
+            onPressed: () {
+              print('button Pressed');
+            },
           ),
           SizedBox(
             height: 10.0,
@@ -84,24 +73,20 @@ class SignInPage extends StatelessWidget {
           Text(
             'Or',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 10.0,
           ),
-          SizedBox(
-            height: 50.0,
-            child: RaisedButton(
-              child: Text(
-                'Sign In Anonimously',
-                style: TextStyle(color: Colors.black87, fontSize: 15.0),
-              ),
-              onPressed: () {
-                print('Button Pressed');
-              },
-              color: Colors.red[100],
-              textColor: Colors.black54,
+          CustomRaisedButton(
+            child: Text(
+              'Go anonymous',
+              style: TextStyle(color: Colors.black54, fontSize: 15.0),
             ),
+            color: Colors.red[300],
+            onPressed: () {
+              print('Button');
+            },
           ),
         ],
       ),
