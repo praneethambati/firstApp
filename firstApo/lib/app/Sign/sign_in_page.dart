@@ -1,7 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firstApo/common_widgets/custom_raised_button.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
+  Future<void> _signInAnonymously() async {
+    try {
+      final userCredentials = await FirebaseAuth.instance.signInAnonymously();
+      print('${userCredentials.user.uid}');
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,15 +89,12 @@ class SignInPage extends StatelessWidget {
             height: 10.0,
           ),
           CustomRaisedButton(
-            child: Text(
-              'Go anonymous',
-              style: TextStyle(color: Colors.black54, fontSize: 15.0),
-            ),
-            color: Colors.red[300],
-            onPressed: () {
-              print('Button');
-            },
-          ),
+              child: Text(
+                'Go anonymous',
+                style: TextStyle(color: Colors.black54, fontSize: 15.0),
+              ),
+              color: Colors.red[300],
+              onPressed: _signInAnonymously)
         ],
       ),
     );
